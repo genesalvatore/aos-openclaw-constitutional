@@ -40,4 +40,19 @@ The Gateway must:
      - `constitution.sig.json`
      - (optional) `constitution.c14n.json` (can be derived)
 
+## Verifier output contract
+
+The GitTruth verifier should return structured JSON:
+
+```json
+{
+  "ok": true,
+  "verified_tree_hash": "sha256:<hex>",
+  "verified_commit": "<commit>",
+  "trust_root": "<trust-root-id>",
+  "attestation_id": "<gittruth id>",
+  "timestamp": "<rfc3339>"
+}
+```
+
 This contract is intentionally minimal; your GitTruth client can carry richer fields.

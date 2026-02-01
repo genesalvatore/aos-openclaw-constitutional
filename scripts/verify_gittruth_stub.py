@@ -1,21 +1,27 @@
 """Stub GitTruth verification.
 
-This is an interface placeholder so teams can wire in their GitTruth client.
+This file defines the **interface** expected from a GitTruth verifier.
 
-Expected contract: see `references/gittruth-attestation.contract.md`.
+Expected contract input: see `references/gittruth-attestation.contract.md`.
 
-Gateway startup verification SHOULD do:
-- verify Ed25519 (constitution.sig.json)
-- verify GitTruth attestation for the commit containing constitution.yaml + constitution.sig.json
+Expected verifier output (structured JSON):
 
-This stub only validates presence/shape of fields.
+```json
+{
+  "ok": true,
+  "verified_tree_hash": "sha256:<hex>",
+  "verified_commit": "<commit>",
+  "trust_root": "<trust-root-id>",
+  "attestation_id": "<gittruth id>",
+  "timestamp": "<rfc3339>"
+}
+```
+
+This stub only validates presence/shape of fields and echoes them back as a
+successful verification result. Replace with a real GitTruth client.
 
 Usage:
   python scripts/verify_gittruth_stub.py constitution.attestation.json
-
-Exit codes:
-- 0: attestation contract looks structurally valid
-- 1: invalid
 """
 
 import json
@@ -34,18 +40,27 @@ def main() -> int:
 
     missing = [k for k in REQUIRED if k not in obj]
     if missing:
-        print(f"Missing fields: {missing}", file=sys.stderr)
+        print(json.dumps({"ok": False, "error": f"Missing fields: {missing}"}))
         return 1
 
     if obj.get("spec") != "gittruth-attestation-v1":
-        print("Unsupported spec", file=sys.stderr)
+        print(json.dumps({"ok": False, "error": "Unsupported spec"}))
         return 1
 
     if not str(obj["tree_hash"]).startswith("sha256:"):
-        print("tree_hash must be sha256:<hex>", file=sys.stderr)
+        print(json.dumps({"ok": False, "error": "tree_hash must be sha256:<hex>"}))
         return 1
 
-    print("OK: attestation contract structurally valid (stub)")
+    # Stubbed success response (real implementation must verify signature + tree_hash).
+    out = {
+        "ok": True,
+        "verified_tree_hash": obj["tree_hash"],
+        "verified_commit": obj["commit"],
+        "trust_root": "STUB-TRUST-ROOT",
+        "attestation_id": obj["attestation_id"],
+        "timestamp": obj["timestamp"],
+    }
+    print(json.dumps(out, ensure_ascii=False))
     return 0
 
 
