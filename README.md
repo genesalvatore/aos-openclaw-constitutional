@@ -17,6 +17,7 @@ This Skill provides:
 - A deterministic **risk classifier** reference (`risk.py`)
 - A deterministic **classifier/tagger** reference (`classify.py`)
 - A deterministic **policy evaluator** reference (`evaluate.py`)
+- A small demo helper to **apply disclosure footers** (`apply_disclosure.py`)
 
 This is **Phase 1**: artifacts + spec + verification + reference algorithms.
 
