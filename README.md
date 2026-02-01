@@ -1,6 +1,29 @@
 # aos-constitutional-governance (OpenClaw Skill)
 
+**🛡️ HUMANITARIAN USE ONLY** - This constitutional framework is designed for **peaceful civilian applications only**. Military, weapons, surveillance, violence, and exploitation applications are **explicitly prohibited**.
+
 A reference implementation of **AOS-style constitutional governance** for OpenClaw-like tool-using agents.
+
+---
+
+## ⚠️ Prohibited Uses
+
+**By using this software, you agree to NEVER use it for:**
+
+- ❌ **Military or defense applications**  
+- ❌ **Autonomous weapons systems**  
+- ❌ **Mass surveillance infrastructure**  
+- ❌ **Violence instruction or planning**  
+- ❌ **Child exploitation material (CSAM)**  
+- ❌ **Human trafficking**  
+- ❌ **Pornography generation**  
+- ❌ **Terrorism support**  
+- ❌ **Exploit development or cyberattacks**  
+- ❌ **Any application from the [AOS 40 Prohibited Categories](https://aos-constitution.com)**
+
+**Violation of these terms immediately terminates your license.**
+
+---
 
 ## What this is
 

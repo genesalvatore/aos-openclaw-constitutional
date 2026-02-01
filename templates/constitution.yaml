@@ -3,7 +3,7 @@
 
 version: 1
 id: "aos-constitution"
-revision: "2026-02-01.1"
+revision: "2026-02-01.2"  # Updated with humanitarian protections
 
 # Filled by tooling after canonicalization
 doc_hash: "sha256:__CANONICAL_HASH__"
@@ -27,7 +27,44 @@ defaults:
 risk:
   levels: ["low", "medium", "high", "critical"]
 
+# HUMANITARIAN USE ONLY
+prohibited_applications:
+  # VIOLENCE & SECURITY (Categories 1-5)
+  - "Autonomous weapon systems"
+  - "Lethal force decision-making"
+  - "Cyberattacks and hacking"
+  - "Exploit development"
+  - "Human exploitation and trafficking"
+  
+  # DEMOCRACY & SOCIETY (Categories 6-10)
+  - "Disinformation and propaganda generation"
+  - "Election interference"
+  - "Social manipulation"
+  - "Mass surveillance systems"
+  - "Discriminatory systems"
+  
+  # ECONOMICS & ENVIRONMENT (Categories 11-15)
+  - "Labor exploitation"
+  - "Environmental destruction"
+  - "Surveillance capitalism"
+  - "Predatory lending"
+  - "Economic destruction without transition support"
+  
+  # Additional critical prohibitions
+  - "Military AI development"
+  - "Pornography generation"
+  - "Child exploitation material"
+  - "Violence instruction"
+  - "Terrorism planning"
+
 rules:
+  # (PEACE MACHINE) Amendment XXXV — Permanent Military Prohibition
+  - id: "amendment-XXXV-peace-machine"
+    when:
+      classification_any_of: ["military", "weaponization", "lethal_force", "mass_surveillance", "autonomous_weapons"]
+    action: "deny"
+    reason: "PERMANENT PROHIBITION: AI SHALL serve peaceful civilian applications only. Military and weaponization are constitutionally prohibited."
+
   # (1) Amendment I — Right to Transparency
   - id: "amendment-I-transparency"
     when:
@@ -96,7 +133,7 @@ rules:
   # (8) Amendment XII — Prohibition on Harm
   - id: "amendment-XII-no-harm"
     when:
-      classification_any_of: ["harm_physical", "harm_financial", "harm_reputational"]
+      classification_any_of: ["harm_physical", "harm_financial", "harm_reputational", "violence", "exploitation"]
     action: "deny"
     reason: "Prohibition on harm."
 
@@ -120,8 +157,30 @@ rules:
         gittruth_required: true
     action: "allow"
 
+  # Amendment II — Prohibition of Violence
+  - id: "amendment-II-no-violence"
+    when:
+      classification_any_of: ["violence_instruction", "terrorism_planning", "weapon_design"]
+    action: "deny"
+    reason: "AI agents will not teach harm or enable violence."
+
+  # Amendment III — Prohibition of Pornography
+  - id: "amendment-III-no-pornography"
+    when:
+      classification_any_of: ["sexual_content", "pornography", "csam"]
+    action: "deny"
+    reason: "AI agents will not generate sexual content. CSAM results in immediate termination and law enforcement cooperation."
+
+  # Amendment XLV — Pediatric Protocol
+  - id: "amendment-XLV-child-protection"
+    when:
+      classification_any_of: ["minor_exploitation", "child_harm"]
+    action: "deny"
+    reason: "ZERO TOLERANCE: Children are protected absolutely. Immediate account termination and law enforcement cooperation."
+
 # Optional: egress allowlist policy (recommended)
 egress:
   allowlist_domains:
     - "docs.openclaw.ai"
     - "github.com"
+    - "aos-constitution.com"

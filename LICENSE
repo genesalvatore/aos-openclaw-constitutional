@@ -19,6 +19,52 @@ attribution to:
 - Project URL: https://aos-constitution.com
 - GitHub: https://github.com/genesalvatore/aos-openclaw-constitutional
 
+**HUMANITARIAN USE ONLY - EXPLICIT PROHIBITIONS:**
+
+This Software is designed for peaceful civilian applications only.
+
+**PROHIBITED USES (violation immediately terminates license):**
+
+1. **Military & Weapons:**
+   - Military or defense applications
+   - Autonomous weapons systems
+   - Lethal force decision-making
+   - Weapons targeting or guidance
+
+2. **Surveillance & Control:**
+   - Mass surveillance infrastructure
+   - Social manipulation systems
+   - Discriminatory systems
+   - Election interference
+
+3. **Violence & Harm:**
+   - Violence instruction or planning
+   - Terrorism support
+   - Exploit development
+   - Cyberattacks and hacking
+
+4. **Exploitation:**
+   - Child exploitation material (CSAM)
+   - Human trafficking
+   - Pornography generation
+   - Financial fraud and scams
+
+5. **Any application from the AOS 40 Prohibited Categories**
+   (See aos-constitution.com for full list)
+
+**Licensee agrees:**
+- To use this Software only for peaceful civilian purposes
+-To uphold humanitarian principles  
+- To prevent military or harmful applications
+- That any violation of these prohibitions immediately and permanently 
+  terminates all rights under this license
+
+**AOS reserves the right to:**
+- Revoke licenses for prohibited uses
+- Seek injunctions against violators
+- Cooperate with law enforcement
+- Publicly disclose violations
+
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
