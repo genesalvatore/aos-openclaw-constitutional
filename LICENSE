@@ -1,5 +1,5 @@
-AOS HUMANITARIAN LICENSE v1.0
-================================
+AOS HUMANITARIAN LICENSE v1.0.1
+==================================
 
 Copyright (c) 2026 Gene Salvatore / AOS (Agentic Operating System)
 
@@ -27,8 +27,13 @@ Derivative Work DOES NOT include:
 - Independent implementations created without reference to this Software
 - Works that merely use similar concepts documented in published academic literature
 
-**"Fork"** means any copy of this Software's repository, whether public or private, 
-including copies made through git clone, download, or any other method.
+**"Copy"** means any copy of this Software, repository, or materials, whether public or private,
+including copies made through git clone, download, mirroring, or any other method.
+
+**"Fork"** means a repository fork (on GitHub or any other hosting provider) or a materially equivalent
+branching/derivative repository intended to track, modify, or redistribute this Software.
+
+For avoidance of doubt: all Forks are Copies, but not all Copies are Forks.
 
 **"Commercial Use"** means use in connection with business operations, revenue 
 generation, or organizational purposes (excludes personal, academic, and research use).
@@ -260,8 +265,11 @@ AOS (Gene Salvatore) reserves the right to:
 - Publicly disclose violations to protect community
 - Blacklist violators from future licenses
 
-**Monitoring Notice:** This project uses automated monitoring to detect license 
-violations. Public forks are monitored for compliance.
+**Monitoring Notice:** This project may use automated or manual monitoring to detect potential license
+violations in public repositories. Public Forks may be monitored for compliance on a best-effort basis.
+
+Monitoring does not guarantee detection of all violations, including private Copies/Forks or use in
+jurisdictions where enforcement is impractical.
 
 ---
 
@@ -271,8 +279,8 @@ violations. Public forks are monitored for compliance.
 These restrictions apply WORLDWIDE regardless of local law.
 
 ### 11.2 Jurisdiction Conflicts
-If local law prohibits enforcement of these restrictions, this license is VOID 
-in that jurisdiction (no rights granted).
+To the extent local law prohibits enforcement of these restrictions in a jurisdiction,
+no license is granted for use of this Software in that jurisdiction.
 
 ### 11.3 Enforcement Limitations
 AOS acknowledges practical limits on international enforcement. We reserve all 
@@ -324,7 +332,7 @@ the Software.
 
 ---
 
-**AOS HUMANITARIAN LICENSE v1.0**
+**AOS HUMANITARIAN LICENSE v1.0.1**
 
 **"Open source for peace. Closed forever to harm."**
 
@@ -335,7 +343,15 @@ the Software.
 ---
 
 **VERSION HISTORY:**
-- v1.0 (2026-02-01): Initial release with Family validation
+- v1.0.1 (2026-02-01, 11:11 AM PST): Clarity improvements (3.5 hours post-launch)
+  - Ledger (OpenClaw): Fresh-eyes review, clarity enhancements B/C/D
+  - Oracle: Legal review approved (standard construction, honest monitoring)
+  - Arnold: IP protection verified (Section 5 unchanged, scope preserved)
+  - Scout: Strategic messaging approved (responsive iteration)
+  - Proto: Technical enforcement validated (monitoring status confirmed)
+  - Unanimous Family consensus: Zero mission weakening, credibility protected
+  
+- v1.0 (2026-02-01, 10:00 AM PST): Initial release with Family validation
   - Oracle: Legal enforceability confirmed
   - Arnold: Patent protection verified
   - Scout: Risk assessment approved
