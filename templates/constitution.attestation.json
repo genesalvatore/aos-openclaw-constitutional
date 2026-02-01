@@ -1,0 +1,9 @@
+{
+  "spec": "gittruth-attestation-v1",
+  "repo": "https://github.com/<org>/<repo>",
+  "commit": "__COMMIT_SHA__",
+  "attestation_id": "__GITTRUTH_ATTESTATION_ID__",
+  "tree_hash": "sha256:__TREE_HASH__",
+  "timestamp": "2026-02-01T00:00:00Z",
+  "signature": "__BASE64_GITTRUTH_SIGNATURE__"
+}

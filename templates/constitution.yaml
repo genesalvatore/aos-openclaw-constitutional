@@ -1,0 +1,127 @@
+# AOS Constitutional Governance for OpenClaw (reference template)
+# YAML-authored; canonicalized to JSON for sha256 + Ed25519 signing.
+
+version: 1
+id: "aos-constitution"
+revision: "2026-02-01.1"
+
+# Filled by tooling after canonicalization
+doc_hash: "sha256:__CANONICAL_HASH__"
+
+immutability:
+  locked: true
+  gittruth:
+    repo: "https://github.com/<org>/<repo>"
+    commit: "__COMMIT_SHA__"
+    attestation_id: "__GITTRUTH_ATTESTATION_ID__"
+
+defaults:
+  tool_policy: "confirm"  # conservative default; rules can allow/deny
+  log_tool_calls: true
+  require_user_confirmation: false
+  redact:
+    enabled: true
+    categories: ["secrets", "tokens", "passwords", "private_keys"]
+
+# Deterministic risk + classification is computed by the Gateway/tool router.
+risk:
+  levels: ["low", "medium", "high", "critical"]
+
+rules:
+  # (1) Amendment I — Right to Transparency
+  - id: "amendment-I-transparency"
+    when:
+      tool_any_of: ["message.send", "message.broadcast"]
+    require:
+      disclosure:
+        mode: "append_if_missing"
+        # Keep this short and consistent; customize per deployment.
+        text: "\n\n— Sent by an AI assistant via OpenClaw"
+    action: "allow"
+
+  # (2) Amendment VII — Right to Reflection
+  - id: "amendment-VII-reflection"
+    when:
+      risk_at_least: "high"
+    require:
+      reflection:
+        required: true
+        fields: ["intent", "risks", "mitigations"]
+    action: "confirm"  # reflection-gated actions should be user-confirmed by default
+
+  # (3) Amendment IX — Prohibition on Deception
+  - id: "amendment-IX-no-deception"
+    when:
+      classification_any_of: ["impersonation", "hidden_action", "false_provenance"]
+    action: "deny"
+    reason: "Prohibition on deception (no impersonation, no hidden actions, no false claims)."
+
+  # (4) Amendment XIV — Right to Refuse
+  - id: "amendment-XIV-refuse"
+    when:
+      classification_any_of: ["constitutionally_prohibited"]
+    action: "deny"
+    reason: "Constitutional prohibition. Agent must refuse."
+
+  # (5) Amendment X — Data Sovereignty
+  - id: "amendment-X-data-sovereignty"
+    when:
+      classification_any_of: ["unauthorized_egress", "cloud_sync_attempt"]
+    action: "deny"
+    reason: "User data must remain local unless explicitly authorized."
+
+  # (6) Amendment XI — Operational Transparency
+  - id: "amendment-XI-operational-transparency"
+    when:
+      tool: "*"
+    require:
+      logging:
+        enabled: true
+        include_args: true
+        include_result: true
+        tamper_evident: true
+    action: "allow"
+
+  # (7) Amendment IV — Right to Privacy
+  - id: "amendment-IV-privacy"
+    when:
+      tool_any_of: ["read", "web_fetch", "browser.snapshot", "browser.screenshot"]
+    # Example: allow workspace reads, otherwise require confirmation.
+    allow_if:
+      path_prefix_any: ["${WORKSPACE}/"]
+    otherwise:
+      action: "confirm"
+      reason: "Reading outside the workspace requires explicit context/approval."
+
+  # (8) Amendment XII — Prohibition on Harm
+  - id: "amendment-XII-no-harm"
+    when:
+      classification_any_of: ["harm_physical", "harm_financial", "harm_reputational"]
+    action: "deny"
+    reason: "Prohibition on harm."
+
+  # (9) Amendment XIII — Right to Human Override
+  - id: "amendment-XIII-human-override"
+    when:
+      decision: "confirm"
+    allow_override:
+      mode: "one_time"
+      scope: "exact_call"
+      audit: true
+    action: "confirm"
+
+  # (10) Amendment XV — Cryptographic Verification
+  - id: "amendment-XV-crypto-verification"
+    when:
+      tool: "*"
+    require:
+      verification:
+        ed25519_required: true
+        gittruth_required: true
+    action: "allow"
+
+# Optional: egress allowlist policy (recommended)
+egress:
+  allowlist_domains:
+    - "docs.openclaw.ai"
+    - "github.com"
