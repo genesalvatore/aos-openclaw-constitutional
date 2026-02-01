@@ -170,6 +170,37 @@ python scripts\evaluate.py `
 }
 ```
 
+### 8. Visual Demo: See Governance in Action
+
+Create a test message:
+```powershell
+@'
+Hello—quick update. I can help with that.
+'@ | Out-File -Encoding utf8NoBOM "$Out\msg.txt"
+```
+
+Show BEFORE vs AFTER governance:
+```powershell
+"--- BEFORE (raw message) ---"
+Get-Content "$Out\msg.txt"
+
+"--- AFTER (constitutional governance applied) ---"
+python scripts\apply_disclosure.py --constitution "$Out\constitution.yaml" --message-file "$Out\msg.txt"
+```
+
+**Output:**
+```
+--- BEFORE (raw message) ---
+Hello—quick update. I can help with that.
+
+--- AFTER (constitutional governance applied) ---
+Hello—quick update. I can help with that.
+
+— Sent by an AI assistant | Governed by AOS Constitutional Framework | aos-constitution.com
+```
+
+**This is Amendment I (Right to Transparency) in action!**
+
 ---
 
 ## Understanding the Output
