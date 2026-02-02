@@ -13,6 +13,8 @@ Implement AOS-style two-layer governance for tool-using assistants:
 
 This Skill focuses on **Phase 1** deliverables (spec + signing + verification + audit artifacts) and provides the evaluation algorithm needed for Phase 2 (Gateway enforcement).
 
+**Clarification:** This repository demonstrates a **reference integration** between agent frameworks and constitutional governance concepts. It does **not** grant patent rights or disclose enforcement mechanisms beyond illustrative examples.
+
 ## Files produced
 
 - `constitution.yaml` — human-readable policy

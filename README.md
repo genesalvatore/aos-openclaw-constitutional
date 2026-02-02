@@ -4,6 +4,8 @@
 
 A reference implementation of **AOS-style constitutional governance** for OpenClaw-like tool-using agents.
 
+**Clarification:** This repository demonstrates a **reference integration** between agent frameworks and constitutional governance concepts. It does **not** grant patent rights or disclose enforcement mechanisms beyond illustrative examples.
+
 ---
 
 ## ⚠️ Prohibited Uses
