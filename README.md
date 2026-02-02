@@ -48,6 +48,18 @@ This is **Phase 1**: artifacts + spec + verification + reference algorithms.
 
 **Important:** Real immutability requires **Gateway/tool-router enforcement** (Phase 2). A Skill alone cannot prevent an agent from attempting prohibited tool calls.
 
+---
+
+### ⚖️ Legal & IP Clarification
+
+**This repository demonstrates a reference integration** between agent frameworks and constitutional governance concepts developed by AOS (Agentic Operating System). 
+
+**This does NOT grant patent rights** or disclose enforcement mechanisms beyond illustrative examples. The code is source-available under the terms in [LICENSE](./LICENSE). See LICENSE Section 5 for explicit patent terms. Method rights and commercial licensing are handled separately.
+
+For commercial licensing or patent licensing inquiries: commercial@aos-constitution.com
+
+---
+
 ## Files
 
 - `templates/constitution.yaml` — reference constitution with the 10 AOS bedrock amendments
