@@ -1,0 +1,3 @@
+# aos-openclaw-constitutional Python dependencies
+# Relies exclusively on Python 3 standard library modules:
+# argparse, json, os, re, sys, dataclasses, typing, enum, base64, hashlib, pathlib

@@ -1,0 +1,17 @@
+{
+  "name": "aos-openclaw-constitutional",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Deterministic Constitutional Policy Enforcement for OpenClaw AI Agents",
+  "scripts": {
+    "test": "python scripts/evaluate.py --help"
+  },
+  "keywords": [
+    "aos",
+    "openclaw",
+    "constitutional-ai",
+    "governance"
+  ],
+  "author": "Gene Salvatore",
+  "license": "CC-BY-4.0"
+}
